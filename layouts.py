@@ -1,5 +1,5 @@
-import PySimpleGUI as sg
-sg.theme("DarkPurple1")
+import PySimpleGUI as sg 
+sg.theme("DarkPurple1") # LightBlue
 logo = "Imagens/logo.ico"
 
 ## constantes
@@ -25,7 +25,18 @@ def ajuda(): #l_ajuda
         [sg.Text("Como utilizar o programa?")]
     ]
 
+valorestable = []
 def interface(): # l_interface
     return [
-        [sg.Text("Interface Principal", font=("Comic 16 bold"))]
+        [sg.Text("Interface Principal", font=("Comic 16 bold"))],
+        [sg.Table(valorestable, ["N.ºUtente", "Pulseira", "Utente", "Caso"], expand_x=True, expand_y=True, auto_size_columns=True)],
+        [sg.Button("Colocar Utente"), sg.Button("Chamar Utente"), sg.Button("Voltar")]
+    ]
+
+pulseiras = ["Verde", "Amarela", "Vermelha"]
+def colocarutente():
+    return [
+        [sg.Text("N.ºUtente"), sg.Input(key="nutente")],
+        [sg.Text("Pulseira"), sg.Combo(pulseiras, default_value="Verde", auto_size_text=True, change_submits=False)],
+        [sg.Text("Caso"), sg.Input(key="caso")]
     ]
