@@ -46,7 +46,7 @@ while running == True: # loop da verificação e atualizaçáo de valores e even
             w_ajuda.close()
 
 
-    if event == "Shortcut": #_# mudar shortcut para nova janela constante (que fecha o menu)
+    if event == "Interface": #_# mudar shortcut para nova janela constante (que fecha o menu)
         atualjanela = "Interface"
         w_interface = sg.Window("Interface", interface(), icon=logo)
         event, values = w_interface.read()

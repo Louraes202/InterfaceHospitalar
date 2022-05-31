@@ -7,7 +7,7 @@ def menu(): # l_menu
     return [ 
         [sg.Text("Interface Hospital", font=("Comic 16 bold"))],
         [sg.Image(source="Imagens/hospital.png", expand_x=True, expand_y=True)],
-        [sg.Button("Entrar"), sg.Button("Ajuda"), sg.Button("Shortcut"), sg.Button("Sair")]
+        [sg.Button("Entrar"), sg.Button("Ajuda"), sg.Button("Interface"), sg.Button("Sair")]
         ]
 
 ## variáveis 
@@ -38,5 +38,6 @@ def colocarutente():
     return [
         [sg.Text("N.ºUtente"), sg.Input(key="nutente")],
         [sg.Text("Pulseira"), sg.Combo(pulseiras, default_value="Verde", auto_size_text=True, change_submits=False)],
-        [sg.Text("Caso"), sg.Input(key="caso")]
+        [sg.Text("Caso"), sg.Input(key="caso")],
+        [sg.Button("Colocar"), sg.Button("Voltar")]
     ]
